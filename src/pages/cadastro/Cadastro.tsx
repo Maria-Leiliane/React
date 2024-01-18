@@ -59,7 +59,7 @@ function Cadastro() {
             }
 
         } else {
-            toastAlerta('Erro ao cadastrar o Usuário', "erro")
+            toastAlerta('Dados inconsistentes! Verifique os dados Cadastrados!', "erro")
             setUsuario({ ...usuario, senha: "" })
             setConfirmaSenha("")
         }
@@ -138,13 +138,11 @@ function Cadastro() {
                     <div className="flex justify-around w-full gap-8">
                         <button
                             className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2'
-                            onClick={retornar}>
-                            Cancelar
+                            onClick={retornar}> Cancelar
                         </button>
                         <button
                             className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 
-                                       py-2 flex justify-center'
-                            type='submit'>
+                                       py-2 flex justify-center' type='submit'>
                             {isLoading ? <RotatingLines
                                 strokeColor="white"
                                 strokeWidth="5"
