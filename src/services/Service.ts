@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://db-blogpesoal-clvr.onrender.com'
+    baseURL: 'https://db-blogpesoal-x141.onrender.com/swagger-ui/index.html'
 })
 
 export const login = async (url: string, dados: Object, setDados: Function) => {
