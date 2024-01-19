@@ -13,6 +13,7 @@ function Cadastro() {
     const navigate = useNavigate()
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
     const [usuario, setUsuario] = useState<Usuario>({
@@ -59,7 +60,7 @@ function Cadastro() {
             }
 
         } else {
-            toastAlerta('Dados inconsistentes! Verifique os dados Cadastrados!', "erro")
+            toastAlerta('Dados inconsistentes!', " Verifique os dados Cadastrados!")
             setUsuario({ ...usuario, senha: "" })
             setConfirmaSenha("")
         }
@@ -69,7 +70,9 @@ function Cadastro() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+            <div className="grid grid-cols-1 lg:grid-cols-2
+            bg-gradient-to-r from-violet-950 via-purple-400 to-blue-950
+            h-screen place-items-center font-bold">
                 <div className="fundoCadastro hidden lg:block"></div>
                 <form
                     className='flex justify-center items-center flex-col w-2/3 gap-3'
@@ -82,7 +85,7 @@ function Cadastro() {
                             id="nome"
                             name="nome"
                             placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-950 rounded p-3"
                             value={usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -94,7 +97,7 @@ function Cadastro() {
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-950 rounded p-3"
                             value={usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -106,7 +109,7 @@ function Cadastro() {
                             id="foto"
                             name="foto"
                             placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-950 rounded p-3"
                             value={usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -118,7 +121,7 @@ function Cadastro() {
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-950 rounded p-3"
                             value={usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -130,27 +133,33 @@ function Cadastro() {
                             id="confirmarSenha"
                             name="confirmarSenha"
                             placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-950 rounded p-3"
                             value={confirmaSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                         />
                     </div>
                     <div className="flex justify-around w-full gap-8">
                         <button
-                            className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2'
-                            onClick={retornar}> Cancelar
+                            className='rounded text-lime-300 bg-gradient-to-r from-red-800 via-purple-500 to-pink-600 
+                            hover:bg-gradient-to-r hover:from-violet-950 hover:via-purple-600 hover:to-blue-950 w-1/2 py-2'
+                            onClick={retornar}
+                        >
+                            Cancelar
                         </button>
-                        <button
-                            className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 
-                                       py-2 flex justify-center' type='submit'>
-                            {isLoading ? <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
-                                <span>Cadastrar</span>}
+
+                        <button className='rounded bg-gradient-to-r from-red-800 via-purple-500 to-pink-600 
+                         hover:from-violet-950 hover:via-purple-600 hover:to-blue-950 
+                         w-1/2 py-2 flex justify-center' type='submit'>
+                            {isLoading ?
+                                <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="24"
+                                    visible={true}
+                                /> :
+                                <span>Cadastrar</span>
+                            }
                         </button>
                     </div>
                 </form>

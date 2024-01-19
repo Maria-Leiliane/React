@@ -23,7 +23,7 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
-              <Route path="home" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/temas" element={<ListaTemas />} />
               <Route path="/cadastroTema" element={<FormularioTema />} />
               <Route path="/editarTema/:id" element={<FormularioTema />} />

@@ -6,14 +6,14 @@ import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostage
 function Home() {
     return (
         <>
-            <div className="bg-indigo-900 flex justify-center">
-                <div className='container grid grid-cols-2 text-white'>
+            <div className=" flex justify-center bg-gradient-to-r from-violet-950 via-purple-400 to-blue-950">
+                <div className='container grid grid-cols-2 text-lime-300'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold'>
-                            Seja Bem Vinde!
+                            Bem Vinde!
                         </h2>
                         <p className='text-xl'>
-                            Expresse aqui seus pensamentos e opniões
+                            Aqui seus pensamentos e opniões são livres
                         </p>
 
                         <div className="flex justify-around gap-4">
