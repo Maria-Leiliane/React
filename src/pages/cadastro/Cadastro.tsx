@@ -53,10 +53,10 @@ function Cadastro() {
 
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-                toastAlerta('Usuário cadastrado com sucesso', "sucesso")
+                toastAlerta('Usuário cadastrado com sucesso', "Aproveite essa viagem")
 
             } catch (error) {
-                toastAlerta('Erro ao cadastrar o Usuário', "erro")
+                toastAlerta('Erro ao cadastrar o Usuário', "Atenção")
             }
 
         } else {
@@ -91,7 +91,7 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuario</label>
+                        <label htmlFor="usuario">Email</label>
                         <input
                             type="text"
                             id="usuario"
