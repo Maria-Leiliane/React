@@ -38,7 +38,7 @@ function FormularioTema() {
     useEffect(() => {
         if (token === '') {
             toastAlerta('Você precisa estar logado', "info")
-            navigate('/login');
+            navigate('/');
         }
     }, [token]);
 

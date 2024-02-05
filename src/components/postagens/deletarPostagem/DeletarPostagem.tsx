@@ -1,15 +1,13 @@
-import { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useContext, useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { AuthContext } from "../../../contexts/AuthContext"
+import Postagem from "../../../models/Postagem"
+import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
-
-import { buscar, deletar } from '../../../services/Service'
-import { AuthContext } from '../../../contexts/AuthContext'
-import { toastAlerta } from '../../../utils/toastAlerta'
-
-import Postagem from '../../../models/Postagem'
+import { toastAlerta } from "../../../utils/toastAlerta"
 
 function DeletarPostagem() {
-    
+
     const navigate = useNavigate()
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -29,7 +27,7 @@ function DeletarPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                toastAlerta('O token expirou, favor logar novamente', "info")
+                toastAlerta('O token expirou', "Faça o login novamente")
                 handleLogout()
             }
         }
@@ -37,8 +35,8 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            toastAlerta('Você precisa estar logado', "info")
-            navigate('/login')
+            toastAlerta('Você precisa estar logado', "Acesse sua contaq")
+            navigate('/')
         }
     }, [token])
 
@@ -81,26 +79,25 @@ function DeletarPostagem() {
             </p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                <header
+                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
                     Postagem
                 </header>
-
                 <div className="p-4">
                     <p className='text-xl h-full'>{postagem.titulo}</p>
                     <p>{postagem.texto}</p>
                 </div>
                 <div className="flex">
                     <button
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        className='text-slate-100 bg-red-400 
+                                hover:bg-red-600 w-full py-2'
                         onClick={retornar}>
                         Não
                     </button>
-
                     <button
                         className='w-full text-slate-100 bg-indigo-400 
                         hover:bg-indigo-600 flex items-center justify-center'
                         onClick={deletarPostagem}>
-
                         {isLoading ?
                             <RotatingLines
                                 strokeColor="white"
