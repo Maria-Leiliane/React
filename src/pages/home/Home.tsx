@@ -7,16 +7,18 @@ function Home() {
     return (
         <>
             <div className=" flex justify-center bg-gradient-to-r from-violet-950 via-purple-400 to-blue-950">
-                <div className='container grid grid-cols-2 text-lime-300'>
+                <div className='container grid grid-cols-2 text-red-200'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold'>
-                            Bem Vinde!
+                            Bem Vindo!
                         </h2>
                         <p className='text-xl'>
                             Aqui seus pensamentos e opniões são livres
                         </p>
 
-                        <div className="flex justify-around gap-4">
+                        <div className="flex justify-around gap-4
+                        
+                         bg-gradient-to-r from-violet-950 via-purple-400 to-blue-950">
                             <div className="flex justify-around gap-4">
                                 <ModalPostagem />
                             </div>

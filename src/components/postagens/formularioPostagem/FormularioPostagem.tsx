@@ -148,7 +148,7 @@ function FormularioPostagem() {
                         placeholder="Insira aqui o Título"
                         name="titulo"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-slate-900 border rounded p-2"
                     />
                 </div>
 
@@ -159,19 +159,19 @@ function FormularioPostagem() {
                         value={postagem.texto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         type="text"
-                        placeholder="Adicione aqui o Texto da Postagem"
+                        placeholder="Texto da Postagem"
                         name="texto"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-slate-900 border rounded p-2"
                     />
                 </div>
 
                 <div className="flex flex-col gap-2">
                     <p>Tema da Postagem</p>
-                    <select name="tema" id="tema" className='border p-2 border-slate-800 rounded'
+                    <select name="tema" id="tema" className='border p-2 border-slate-900'
                         onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
                     >
-                        <option value="" selected disabled>Selecione um Tema</option>
+                        <option value="" selected disabled>Selecione o Tema</option>
                         {temas.map((tema) => (
                             <>
                                 <option value={tema.id} >{tema.descricao}</option>
@@ -182,8 +182,9 @@ function FormularioPostagem() {
                 <button
                     type='submit'
                     disabled={carregandoTema}
-                    className='flex justify-center rounded disabled:bg-slate-200 bg-indigo-400 
-                            hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto py-2'
+                    className='rounded bg-gradient-to-r from-red-800 via-purple-500 to-pink-600 
+                    hover:from-violet-950 hover:via-purple-600 hover:to-blue-950 
+                    w-1/2 py-2 flex justify-center' 
                 >
                     {isLoading ?
                         <RotatingLines

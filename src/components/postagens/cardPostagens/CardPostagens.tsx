@@ -11,7 +11,7 @@ function CardPostagens({ post }: CardPostagensProps) {
             flex flex-col rounded overflow-hidden justify-between'>
                 
             <div>
-                <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
+                <div className="flex w-full rounded bg-gradient-to-r from-pink-800 via-purple-500 to-blue-950  py-2 px-4 items-center gap-4">
                     <img src={post.usuario?.foto} className='h-12 rounded-full' alt={post.usuario?.nome} />
                     <h3 className='text-lg font-bold text-center uppercase'>{post.usuario?.nome}</h3>
                 </div>
@@ -27,13 +27,15 @@ function CardPostagens({ post }: CardPostagensProps) {
             </div>
             <div className="flex">
                 <Link to={`/editarpostagem/${post.id}`}
-                    className='w-full text-white bg-indigo-400 
-                    hover:bg-indigo-800 flex items-center justify-center py-2'>
+                    className='w-full text-lime-300 bg-gradient-to-r from-red-800 via-purple-500 to-pink-600 
+                    hover:from-violet-950 hover:via-purple-600 hover:to-blue-950 
+                    flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
                 <Link to={`/deletarpostagem/${post.id}`} 
-                    className='text-white bg-red-400 
-                    hover:bg-red-700 w-full flex items-center justify-center'>
+                    className='text-whiterounded bg-gradient-to-r from-red-800 via-purple-500 to-pink-600 
+                    hover:from-violet-950 hover:via-purple-600 hover:to-blue-950 
+                     w-full flex items-center justify-center'>
                     <button>Deletar</button>
                 </Link>
             </div>
